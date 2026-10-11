@@ -5,6 +5,8 @@ author: Alan Shaffer
 publisher: Nexiom Press
 order: 2
 status: Manuscript
-blurb: Description coming soon.
+blurb: "A chronological criticism of Scripture's evolution from myth to canon."
 ---
-Add a short description of the book here. It appears above the table of contents.
+A Chronological Criticism of Scripture's Evolution from Myth to Canon.
+
+<p class="begin"><a class="button" href="{{ '/thebibleinhumantime.html' | relative_url }}">Read the book</a></p>
