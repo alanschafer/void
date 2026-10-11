@@ -1,0 +1,37 @@
+title: The Void
+tagline: works from the void
+description: The home of every book by Jamie Shaffer. Read them here, one chapter at a time.
+author: Jamie Shaffer
+
+# GitHub Pages address. If your repo is NOT named "void", change baseurl to match its name.
+url: "https://alanschafer.github.io"
+baseurl: "/void"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  toc_levels: 2..3
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  books:
+    output: true
+    permalink: /books/:name/
+  chapters:
+    output: true
+    permalink: /read/:path/
+
+defaults:
+  - scope: { path: "", type: "books" }
+    values: { layout: "book" }
+  - scope: { path: "", type: "chapters" }
+    values: { layout: "chapter" }
+
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
