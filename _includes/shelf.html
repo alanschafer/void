@@ -1,0 +1,12 @@
+<ul class="shelf-list">
+  {% assign books = site.books | sort: "order" %}
+  {% for b in books %}
+  <li>
+    <a class="shelf-row" href="{{ b.url | relative_url }}">
+      <span class="shelf-name">{{ b.title }}</span>
+      <span class="shelf-meta">{{ b.author | default: site.author }}{% if b.status %} &middot; {{ b.status }}{% endif %}</span>
+      {% if b.blurb %}<span class="shelf-blurb">{{ b.blurb }}</span>{% endif %}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
