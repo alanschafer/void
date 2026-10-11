@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{% assign book = site.books | where: "book_id", page.book | first %}
+{% assign siblings = site.chapters | where: "book", page.book | sort: "order" %}
+{% for c in siblings %}
+  {% if c.url == page.url %}
+    {% unless forloop.first %}{% assign pi = forloop.index0 | minus: 1 %}{% assign prev = siblings[pi] %}{% endunless %}
+    {% unless forloop.last %}{% assign ni = forloop.index0 | plus: 1 %}{% assign next = siblings[ni] %}{% endunless %}
+  {% endif %}
+{% endfor %}
+<article class="chapter measure">
+  <p class="crumb"><a href="{{ book.url | relative_url }}">{{ book.title }}</a></p>
+  <h1 class="chapter-title">{{ page.title }}</h1>
+  <div class="rule" aria-hidden="true"></div>
+  <div class="prose reading">{{ content }}</div>
+  <nav class="pager" aria-label="Chapters">
+    {% if prev %}<a class="pager-prev" href="{{ prev.url | relative_url }}"><small>Previous</small>{{ prev.title }}</a>{% else %}<span></span>{% endif %}
+    {% if next %}<a class="pager-next" href="{{ next.url | relative_url }}"><small>Next</small>{{ next.title }}</a>{% else %}<a class="pager-next" href="{{ book.url | relative_url }}"><small>Finished</small>Back to the book</a>{% endif %}
+  </nav>
+</article>
