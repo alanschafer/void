@@ -1,0 +1,16 @@
+---
+layout: default
+title: The Void
+body_class: home
+---
+<section class="hero">
+  <div class="eclipse" aria-hidden="true"></div>
+  <h1 class="wordmark">The Void</h1>
+  <p class="tagline">{{ site.tagline }}</p>
+  <a class="button" href="{{ '/library/' | relative_url }}">Enter the library</a>
+</section>
+
+<section class="shelf measure-wide">
+  <h2 class="shelf-title">On the shelf</h2>
+  {% include shelf.html %}
+</section>
