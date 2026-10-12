@@ -1,0 +1,6 @@
+.install{font:inherit;font-size:1rem;color:var(--gold-light);background:rgba(0,0,0,.55);border:1px solid var(--gold);padding:.3rem 1rem;letter-spacing:.06em;cursor:pointer;transition:background .25s,color .25s}
+.install:hover{background:var(--gold);color:#000}
+.install[hidden]{display:none}
+.header-tools{display:flex;align-items:baseline;gap:1.5rem;flex-wrap:wrap}
+.install-tip{position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%);max-width:min(92vw,26rem);padding:1rem 1.25rem;background:var(--raised);border:1px solid var(--gold);color:var(--text);text-align:center;font-size:1rem;z-index:50}
+.install-tip[hidden]{display:none}
