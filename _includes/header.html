@@ -1,7 +1,11 @@
 <header class="site-header">
   <a class="brand" href="{{ '/' | relative_url }}">The Void</a>
-  <nav aria-label="Main">
-    <a href="{{ '/library/' | relative_url }}"{% if page.url contains '/library' or page.collection == 'books' %} aria-current="page"{% endif %}>Library</a>
-    <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} aria-current="page"{% endif %}>About</a>
-  </nav>
+  <div class="header-tools">
+    <nav aria-label="Main">
+      <a href="{{ '/library/' | relative_url }}"{% if page.url contains '/library' or page.collection == 'books' %} aria-current="page"{% endif %}>Library</a>
+      <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} aria-current="page"{% endif %}>About</a>
+    </nav>
+    <button class="install" id="install" type="button" hidden>Install app</button>
+  </div>
 </header>
+<div class="install-tip" id="install-tip" hidden>On iPhone or iPad: tap the Share button, then choose &ldquo;Add to Home Screen&rdquo;.</div>
